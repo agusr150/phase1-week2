@@ -1,0 +1,39 @@
+Callback Read Multiple File
+
+Di repo telah disediakan 2 file : parents.json (berisi kumpulan data para orang tua) dan children.json (berisi kumpulan data para anak-anak).
+Release 0: Read Multiple Data and Manipulate Object using CALLBACK
+
+Pertama, buat sebuah function bernama match_data. Function tersebut memiliki fitur sbg berikut : 1. Baca file dari parents.json, kemudian convert data nya sehingga tipe data nya menjadi array of object bernama parent_data. Asumsikan untuk baca file membutuhkan waktu 5 detik dengan menggunakan sleep(5000) 2. Setelah mendapatkan parent_data, baca file dari children.json, kemudian tambahkan property baru untuk masing2 object dari parent_data bernama children dan diisi dengan sebuah array dari nama-nama children dengan mencocokan last_name (parents) dengan family (children). Asumsikan untuk baca file membutuhkan waktu 5 detik dengan menggunakan sleep(5000) 3. Ketika function ini dijalankan, yang harus muncul pertama kali adalah notification bahwa 'Data sedang diproses !' berupa console.log, setelah itu tampilkan parents_data yang sudah lengkap dengan property baru di atas menggunakan CALLBACK.
+
+Perkiraan hasil output yang diharapkan adalah sebagai berikut (contoh ini hanya sebagian dari hasil keseluruhan):
+
+Notification : Data sedang diproses !
+[ { id: 1,
+    first_name: 'Mike',
+    last_name: 'Campbell',
+    age: 36,
+    children:
+     [ 'Barrett Chan',
+       'Hedda Downs',
+       'Hope Hooper',
+       'Kane Good',
+       'Blossom Odom',
+       'Allegra Rosales',
+       'Lawrence Beach' ] },
+  { id: 2,
+    first_name: 'Igor',
+    last_name: 'Katsev',
+    age: 40,
+    children:
+     [ 'Lani Rollins',
+       'Jonah Deleon',
+       'Jackson Howell',
+       'Emerald Graham',
+       'Yardley Pruitt',
+       'Isabella Santiago',
+       'Ivy Robinson',
+       'Charissa Mitchell' ] },
+  { ... },
+  { ... },
+  { ... },
+]

@@ -1,0 +1,33 @@
+Callback Countdown
+
+Buatlah sebuah countdown timer yang dapat menghitung mundur waktu yang diinginkan pengguna dengan menggunakan konsep Model-View-Controller, meskipun untuk aplikasi ini kita tidak membutuhkan Model.
+
+Contoh pemanggilan:
+
+$ node app.js 100 // buat sebuah countdown dengan waktu 100 detik
+Contoh hasil:
+
+countdown.gif
+
+Struktur direktori (kurang-lebih):
+
+.
+├── README.md
+├── app.js
+├── controllers.js
+├── package.json
+├── views.js
+└── yarn.lock
+Sebelum mulai coding, jangan lupa jalankan terlebih dahulu npm install untuk menginstall beberapa package-package yang diperlukan yang ada di file package.json.
+
+Release 0: Countdown Timer
+
+Langkah pertama, buatlah sebuah fungsi dengan nama timer untuk menghitung mundur angka setiap detiknya. Gunakan method setInterval untuk menjalankan fungsi setiap detik (1000 milidetik) dan setelah countdown mencapai 0 lakukan clearInterval.
+
+Buat juga fungsi dengan nama displayCountdown untuk menampilkan timer ke layar. Buatlah tampilan sederhana terlebih dahulu untuk memastikan semua fungsi dan fitur telah berjalan dengan benar. Cukup gunakan console.log saja untuk release 0 ini. Mempercantik tampilan bisa dilakukan setelahnya di release 1.
+
+Note: Format countdown adalah MM:DD.
+
+Release 1: Better View
+
+Buatlah sehingga tampilan menjadi lebih menarik dengan menggunakan clear untuk membersihkan layar, figlet untuk membuat ascii art dan juga chalk untuk pewarnaan. Baca dokumentasi dari masing-masing package.

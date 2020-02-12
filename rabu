@@ -1,0 +1,111 @@
+Hospital Interface
+
+Learning Competencies
+
+OOP
+MVC
+Callback
+Summary
+
+Challenge kali ini akan membuat sebuah interface untuk manage data employee dan patient. Komponen utamanya di sini adalah : employee (admin, office boy, receptionist, dan dokter), dan patient.
+
+Tujuan utama dari tantangan ini adalah untuk eksplorasi desain berorientasi objek. Kita akan membuat beberapa class dan memiliki method masing-masing.
+
+Releases
+
+Release 0 : Creating the model
+
+Employee
+
+Tulis code yang dapat digunakan untuk membuat object employee, dimana nantinya setiap employee ini harus login untuk dapat mengakses suatu data.
+
+Pikirkanlah property apa saja yang perlu disimpan dari sebuah object employee ! tambahkan juga property jabatan untuk employee. Contoh jabatan employee : admin, dokter, receptionist, office boy atau kamu bisa tambahkan role lain nya.
+
+Patients
+
+Tulis code yang dapat digunakan untuk membuat object patient. Pikirkanlah data apa saja yang perlu disimpan dari seorang patient, misalnya id patient, nama, diagnosa, dll.
+
+Check your code !
+
+Apakah code kamu di atas sudah sesuai dengan MVC ?
+Apakah code untuk membuat kedua object di atas masih berada dalam 1 file ? apabila ya, pisahkan dalam file yang berbeda dengan mengikuti aturan MVC
+Pastikan struktur code kamu sudah MVC sebelum lanjut ke release 1
+Release 1 : Registration Employee Feature
+
+Ingat! tulislah code kamu dengan struktur MVC.
+
+Buat sebuah file json baru bernama employee.json, dan buatlah array [ ] dalam file tsb kemudian di save.
+
+Tambahkan file index.js, dan tulis code agar ketika menjalankan command ini di terminal : node index.js register [myName] [myUsername] [myPassword] [myPosition]akan membuat sebuah object employee baru, kemudian disimpan dalam file employee.json
+
+Contoh interface-nya seperti di bawah ini. Interface ini yang wajib harus ada, selebihnya kalian bebas menambahkan interface / fitur lain yang menurut kalian terbaik:
+
+$ node index.js register budi 123456 dokter
+> save data success {"username":"budi","password":"123456","role":"dokter"}. Total employee : 1
+$ node index.js register angga 54321 admin
+> save data success {"username":"angga","password":"54321","role":"admin"}. Total employee : 2
+Release 2 : Login Employee Feature
+
+Ingat! tulislah code kamu dengan struktur MVC.
+
+Tulis code agar ketika menjalankan command ini di terminal : node index.js login myUsername myPassword, akan menampilkan keterangan apakah berhasil login atau tidak SESUAI data employee yang sebelumnya di register. Contoh interface-nya seperti di bawah ini :
+
+contoh password Benar :
+$ node index.js login budi BudiGanteng123
+> user budi logged in successfully
+contoh username / password Salah :
+$ node index.js login budi y1381hdsh
+> username / password wrong
+Release 3 : Add Patient Feature for Employee with role dokter only
+
+Ingat! tulislah code kamu dengan struktur MVC.
+
+Buat sebuah file json baru bernama patient.json, dan tuliskan [] dalam file tsb kemudian di save.
+
+Setelah menjalankan command untuk login DAN role user tsb adalah DOKTER. ketika menjalankan command ini di terminal :
+
+node index.js addPatient 1 daniel batuk flu pilek demam
+command diatas akan menambahkan data patient tsb ke dalam file patient.json. Apabila user yang login BUKAN DOKTER, maka akan menampilkan keterangan : tidak memiliki akses untuk add patients!
+
+Contoh interface-nya seperti di bawah ini :
+
+----------------------------
+contoh login sebagai dokter :
+----------------------------
+node index.js login budi 123456
+> user budi logged in successfully
+$ node index.js addPatient 1 Daniel batuk flu pilek demam
+> data pasien berhasil ditambahkan. Total data pasien : 1
+$ node index.js addPatient 2 Agung patah Hati Luka Dalam
+> data pasien berhasil ditambahkan. Total data pasien : 2
+----------------------------
+contoh login bukan dokter :
+----------------------------
+$ node index.js login Angga 54321
+> user Angga logged in successfully!
+$ node index.js addPatient 1 daniel batuk flu pilek demam
+> tidak memiliki akses untuk add patient
+Release 4 (optional): Buat agar id patient auto increment
+
+Release 5 (optional): Buat Fitur Logout dan tambahkan requirement pada fitur login
+
+Asumsikan user yang hanya bisa login diaplikasi hanya satu user saja. Buatlah fitur logout untuk memenuhi requirement tersebut.
+
+----------------------------
+contoh logout :
+----------------------------
+$ node index.js logout
+> user has been successfully logout!
+----------------------------
+contoh user login saat masih ada user lain yang sedang login :
+----------------------------
+$ node index.js login rama rama12345
+> user budi still logged in. You need to logout first.
+Optimize Your Learning
+
+Sambil coding, tanyakan dirimu...
+
+Bagaimana cara saya menggunakan class?
+Bagaimana class berinteraksi dengan class lain?
+Atribut yang saya buat bersifat private atau public?
+Apakah method dan variable yang saya buat sudah dinamai dengan baik?
